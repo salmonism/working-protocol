@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f2ec" />
+  <title>보이지 않는 순간들 — Working Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="exhibition" aria-label="클릭 가능한 전시 전경">
+      <div class="wall-wrap">
+        <img class="wall-image" src="assets/main-wall.jpg" alt="보이지 않는 순간들 전시장 전경" draggable="false" />
+        <div class="hotspot-layer" id="hotspotLayer"></div>
+      </div>
+    </section>
+    <footer>
+      <span>작품을 클릭하면 영상, 작품 이미지, 작품 정보가 순서대로 열립니다.</span>
+      <button class="text-button" type="button" id="helpButton">?</button>
+    </footer>
+  </main>
+
+  <dialog class="work-dialog" id="workDialog" aria-labelledby="workTitle">
+    <article class="work-card">
+      <button class="close-button" id="workCloseButton" type="button" aria-label="작품 창 닫기">×</button>
+      <section class="work-section video-section">
+        <p class="section-label">VIDEO</p>
+        <div class="video-frame"><video id="artVideo" controls playsinline preload="metadata"></video></div>
+      </section>
+      <section class="work-section image-section">
+        <p class="section-label">WORK IMAGE</p>
+        <img id="workImage" src="" alt="" />
+      </section>
+      <section class="work-section info-section">
+        <p class="section-label" id="workNumber">WORK 01</p>
+        <h1 id="workTitle">작품 제목</h1>
+        <dl class="work-info">
+          <div><dt>Year</dt><dd id="workYear">2026</dd></div>
+          <div><dt>Medium</dt><dd id="workMedium">Oil pastel on paper</dd></div>
+          <div><dt>Dimensions</dt><dd id="workDimensions">크기 입력</dd></div>
+        </dl>
+        <p class="work-description" id="workDescription">작품 설명을 입력하세요.</p>
+      </section>
+    </article>
+  </dialog>
+
+  <dialog class="text-dialog" id="statementDialog" aria-labelledby="statementTitle">
+    <article class="text-card">
+      <button class="close-button dark" id="statementCloseButton" type="button" aria-label="작가 노트 닫기">×</button>
+      <p class="section-label">ARTIST STATEMENT</p>
+      <h2 id="statementTitle">작가 노트</h2>
+      <div class="statement-copy">
+        <p>
+개발이나 자연재해, 모종의 이유로 기억이 남겨진 공간이 사라지고, 머물던 곳과 단절되는 경험을 겪으면서, 지금 이곳도 언젠가는 떠나야만 한다는 불안이 늘 있었다. 이는 망각의 두려움으로 연결되었고, 나는 잊혀지지 않기 위해 가능한 머무는 곳의 모든 시간을 사진으로, 그림으로 혹은 다른 무엇으로 담고자 했다. 그러나 정착하지 못함이 반드시 불안으로 연결될 필요가 있을까. 만약 떠도는 파도를 유연하게 탈 수 있다면 불안은 자유로, 두려움은 설렘으로 이행시킬 수 있지 않을까. 목적지는 모르지만, 길잡이 별을 읽을 수 있어, 파도의 진동을 삶의 태동으로 감각하는 항해자처럼.
+
+도시의 풍경은 끊임없이 변해왔다. 견고할 것 같았지만 한사코 달라지곤 하는 콘크리트 공간에서 나는 변화 속에 남겨진 존재들에 눈길이 갔다. 그들은 방치된 화분이거나, 유기된 동물이거나, 시들어가는 꽃, 혹은 외로이 서 있는 나무이기도 했다. 내가 할 수 있는 것은 곧 사라질지도 모르는 그들과 풍경을 잊지 않기 위해 기록하고 기억하는 일이었다. 살아 있는 순간을 향한 애도의 과정에서, 존재의 삶을 이야기하고자 했다.
+
+
+</p>
+        
+      </div>
+    </article>
+  </dialog>
+
+  <dialog class="foreword-dialog" id="forewordDialog" aria-labelledby="forewordTitle">
+    <article class="foreword-card">
+      <button class="close-button" id="forewordCloseButton" type="button" aria-label="서문 닫기">×</button>
+      <div class="foreword-heading"><p class="section-label">PROJECT FOREWORD</p><h2 id="forewordTitle">보이지 않는 순간들 — 서문</h2></div>
+      <div class="foreword-scroll"><img src="assets/foreword.jpg" alt="보이지 않는 순간들 프로젝트 서문" /></div>
+    </article>
+  </dialog>
+
+  <dialog class="text-dialog" id="helpDialog">
+    <article class="text-card compact">
+      <button class="close-button dark" id="helpCloseButton" type="button" aria-label="안내 닫기">×</button>
+      <p class="section-label">VIDEO</p>
+      <div class="help-video-frame">
+        <video id="helpVideo" controls playsinline preload="metadata">
+          <source src="videos/question.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <p class="section-label">EDIT GUIDE</p>
+      <h2>?</h2>
+      <div class="help-copy">
+        <p>여기에 안내 문구를 입력하세요.</p>
+      </div>
+    </article>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
