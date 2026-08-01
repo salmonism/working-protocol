@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page-shell">
+  <main class="page-shell" id="pageShell">
     <section class="exhibition" aria-label="클릭 가능한 전시 전경">
       <div class="wall-wrap">
         <img class="wall-image" src="assets/main-wall.jpg" alt="보이지 않는 순간들 전시장 전경" draggable="false" />
@@ -16,32 +16,46 @@
       </div>
     </section>
     <footer>
-      <span>작품을 클릭하면 영상, 작품 이미지, 작품 정보가 순서대로 열립니다.</span>
+      <span>작품을 클릭하면 영상과 작품 이미지, 작품 정보가 한 화면에 열립니다.</span>
       <button class="text-button" type="button" id="helpButton">?</button>
     </footer>
   </main>
 
   <dialog class="work-dialog" id="workDialog" aria-labelledby="workTitle">
-    <article class="work-card">
+    <article class="work-card work-split-layout">
       <button class="close-button" id="workCloseButton" type="button" aria-label="작품 창 닫기">×</button>
-      <section class="work-section video-section">
+
+      <section class="work-section video-section work-video-column">
         <p class="section-label">VIDEO</p>
-        <div class="video-frame"><video id="artVideo" controls playsinline preload="metadata"></video></div>
+        <div class="video-frame" id="videoFrame">
+          <iframe id="vimeoFrame" title="작품 영상" src="" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+          <div class="video-placeholder" id="videoPlaceholder">
+            <p>script.js의 해당 작품 vimeo 항목에 Vimeo 링크를 입력하세요.</p>
+          </div>
+        </div>
       </section>
-      <section class="work-section image-section">
-        <p class="section-label">WORK IMAGE</p>
-        <img id="workImage" src="" alt="" />
-      </section>
-      <section class="work-section info-section">
-        <p class="section-label" id="workNumber">WORK 01</p>
-        <h1 id="workTitle">작품 제목</h1>
-        <dl class="work-info">
-          <div><dt>Year</dt><dd id="workYear">2026</dd></div>
-          <div><dt>Medium</dt><dd id="workMedium">Oil pastel on paper</dd></div>
-          <div><dt>Dimensions</dt><dd id="workDimensions">크기 입력</dd></div>
-        </dl>
-        <p class="work-description" id="workDescription">작품 설명을 입력하세요.</p>
-      </section>
+
+      <div class="work-detail-column">
+        <section class="work-section image-section">
+          <p class="section-label">WORK IMAGE</p>
+          <div class="work-image-frame"><img id="workImage" src="" alt="" /></div>
+        </section>
+        <section class="work-section info-section">
+          <p class="section-label" id="workNumber">WORK 01</p>
+          <h1 id="workTitle">작품 제목</h1>
+          <dl class="work-info">
+            <div><dt>Year</dt><dd id="workYear">2026</dd></div>
+            <div><dt>Medium</dt><dd id="workMedium">Oil pastel on paper</dd></div>
+            <div><dt>Dimensions</dt><dd id="workDimensions">크기 입력</dd></div>
+          </dl>
+          <p class="work-description" id="workDescription">작품 설명을 입력하세요.</p>
+          <nav class="work-navigation" aria-label="작품 이동">
+            <button id="previousWorkButton" type="button" aria-label="이전 작품">←</button>
+            <span id="workPosition" aria-live="polite">1 / 13</span>
+            <button id="nextWorkButton" type="button" aria-label="다음 작품">→</button>
+          </nav>
+        </section>
+      </div>
     </article>
   </dialog>
 
@@ -76,9 +90,8 @@
       <button class="close-button dark" id="helpCloseButton" type="button" aria-label="안내 닫기">×</button>
       <p class="section-label">VIDEO</p>
       <div class="help-video-frame">
-        <video id="helpVideo" controls playsinline preload="metadata">
-          <source src="videos/question.mp4" type="video/mp4" />
-        </video>
+        <iframe id="helpVimeoFrame" title="안내 영상" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen hidden></iframe>
+        <p class="video-placeholder" id="helpVideoPlaceholder">script.js의 HELP_VIMEO_URL에 Vimeo 링크를 입력하세요.</p>
       </div>
       <p class="section-label">EDIT GUIDE</p>
       <h2>?</h2>

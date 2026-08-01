@@ -1,9 +1,16 @@
-1. 이 폴더 전체를 Netlify에 업로드하세요.
-2. 작품 정보 수정: script.js의 works 목록
-3. 영상 교체: videos/work-01.mp4 ~ work-13.mp4
-4. 작품 이미지 교체: assets/works/work-01.jpg ~ work-13.jpg
-5. Artist statement 수정: index.html 안의 statement-copy 부분
-6. 인스타그램 주소 수정: script.js의 instagram.com/sallyyangart 부분
+Vimeo 링크 입력 방법
 
-수정: artist statement 클릭 영역을 실제 글자 위치에 맞게 보정했습니다.
-7. ? 버튼 영상: videos/question.mp4
+1. script.js를 텍스트 편집기로 엽니다.
+2. 각 작품의 vimeo:"VIMEO_LINK_01" 부분에 Vimeo 영상 주소를 넣습니다.
+
+예시
+vimeo:"https://vimeo.com/123456789"
+
+비공개 링크에 h 값이 붙어 있는 경우 주소 전체를 그대로 넣으세요.
+예시
+vimeo:"https://vimeo.com/123456789/abcdef" 또는 플레이어 공유 주소 전체
+
+3. 안내 영상은 script.js 아래쪽의 HELP_VIMEO_URL에 입력합니다.
+4. GitHub에는 index.html, style.css, script.js, assets 폴더를 함께 올립니다.
+
+작품을 열면 작품 이미지가 영상 포스터로 먼저 보이고, PLAY PROCESS를 누르면 같은 자리에서 Vimeo 영상이 재생됩니다.

@@ -13,3 +13,238 @@ dialog{padding:0;border:0;background:transparent}dialog::backdrop{background:rgb
 .help-video-frame video{display:block;width:100%;height:100%;object-fit:contain}
 .help-copy{line-height:1.9;color:#3f3f3f}
 .help-copy p{margin:0}
+
+/* 작품 팝업: 왼쪽 영상 / 오른쪽 작품 이미지와 설명 */
+.work-dialog{
+  width:min(1500px,calc(100vw - 32px));
+  height:min(900px,calc(100vh - 32px));
+  max-height:calc(100vh - 32px);
+}
+.work-card.work-split-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(360px,.65fr);
+  width:100%;
+  height:100%;
+  max-height:none;
+  overflow:hidden;
+}
+.work-video-column{
+  min-width:0;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-right:1px solid var(--line);
+  border-bottom:0;
+}
+.work-video-column .section-label{
+  flex:0 0 auto;
+}
+.work-video-column .video-frame{
+  width:100%;
+  aspect-ratio:auto;
+  flex:1 1 auto;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.work-video-column .video-frame video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.work-detail-column{
+  min-width:0;
+  min-height:0;
+  display:grid;
+  grid-template-rows:minmax(260px,54%) minmax(0,46%);
+  background:#f8f7f3;
+}
+.work-detail-column .work-section{
+  min-height:0;
+}
+.work-detail-column .image-section{
+  display:flex;
+  flex-direction:column;
+  padding:18px 20px 20px;
+  overflow:hidden;
+}
+.work-image-frame{
+  flex:1 1 auto;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.work-detail-column .image-section img{
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  margin:auto;
+}
+.work-detail-column .info-section{
+  overflow:auto;
+  padding:18px 24px 26px;
+  border-bottom:0;
+}
+.work-detail-column .info-section h1{
+  margin:0 0 14px;
+  font-size:clamp(23px,2.2vw,40px);
+  line-height:1.08;
+}
+.work-detail-column .work-info div{
+  grid-template-columns:94px 1fr;
+  gap:12px;
+  padding:7px 0;
+  font-size:13px;
+}
+.work-detail-column .work-description{
+  margin:16px 0 0;
+  font-size:14px;
+  line-height:1.65;
+}
+.work-dialog .close-button{
+  position:absolute;
+  top:12px;
+  right:12px;
+}
+@media(max-width:900px){
+  .work-dialog{
+    width:min(980px,calc(100vw - 24px));
+    height:auto;
+  }
+  .work-card.work-split-layout{
+    display:block;
+    max-height:calc(100vh - 24px);
+    overflow:auto;
+  }
+  .work-video-column{
+    min-height:auto;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .work-video-column .video-frame{
+    aspect-ratio:16/9;
+  }
+  .work-detail-column{
+    display:block;
+  }
+  .work-detail-column .image-section,
+  .work-detail-column .info-section{
+    overflow:visible;
+  }
+  .work-detail-column .image-section img{
+    max-height:65vh;
+  }
+}
+
+/* Vimeo 임베드 */
+.video-frame iframe,.help-video-frame iframe{display:block;width:100%;height:100%;border:0;background:#000}
+.video-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;margin:0;padding:24px;color:#bbb;text-align:center;line-height:1.6}
+[hidden]{display:none!important}
+
+/* 작품 이미지를 포스터로 먼저 보여주고, 클릭한 자리에서 Vimeo 재생 */
+.vimeo-poster{
+  position:relative;
+  width:100%;
+  height:100%;
+  padding:0;
+  border:0;
+  overflow:hidden;
+  background:#151515;
+  color:#fff;
+  cursor:pointer;
+}
+.vimeo-poster img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.vimeo-poster-shade{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.08),rgba(0,0,0,.38));
+  transition:background .2s ease;
+}
+.vimeo-poster:hover .vimeo-poster-shade,
+.vimeo-poster:focus-visible .vimeo-poster-shade{background:rgba(0,0,0,.3)}
+.vimeo-play-button{
+  position:absolute;
+  left:50%;
+  top:50%;
+  display:grid;
+  place-items:center;
+  width:76px;
+  height:76px;
+  padding-left:5px;
+  border:1px solid rgba(255,255,255,.75);
+  border-radius:50%;
+  background:rgba(0,0,0,.48);
+  font-size:29px;
+  transform:translate(-50%,-58%);
+  transition:transform .2s ease,background .2s ease;
+}
+.vimeo-poster:hover .vimeo-play-button,
+.vimeo-poster:focus-visible .vimeo-play-button{
+  background:rgba(0,0,0,.68);
+  transform:translate(-50%,-58%) scale(1.06);
+}
+.vimeo-play-label{
+  position:absolute;
+  left:50%;
+  top:calc(50% + 53px);
+  transform:translateX(-50%);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  white-space:nowrap;
+}
+.work-navigation{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin-top:24px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.work-navigation button{
+  width:38px;
+  height:34px;
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+  font-size:20px;
+}
+.work-navigation button:hover,
+.work-navigation button:focus-visible{background:#e8e5de}
+.work-navigation span{
+  min-width:72px;
+  color:var(--muted);
+  text-align:center;
+  font-size:12px;
+  letter-spacing:.12em;
+}
+@media(max-width:700px){
+  .vimeo-play-button{width:60px;height:60px;font-size:23px}
+  .vimeo-play-label{top:calc(50% + 40px)}
+}
+
+
+/* 전시 입장 화면 */
+
+
+/* 썸네일 없이 Vimeo를 즉시 표시 */
+.video-frame{position:relative;overflow:hidden}
+.video-frame iframe{opacity:0;transition:opacity .35s ease}
+.video-frame iframe.is-visible{opacity:1}
+.work-card.work-split-layout{animation:workPanelIn .35s ease both}
+@keyframes workPanelIn{from{opacity:0;transform:scale(.992)}to{opacity:1;transform:none}}
+
+/* 설명 음성을 들을 수 있도록 Vimeo 기본 컨트롤을 유지합니다. */
+.video-frame iframe{background:#000}
