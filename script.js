@@ -11,7 +11,7 @@ const works = [
   {id:10,title:"꽃더미",year:"2023",medium:"Ink on paper",dimensions:"29.7x21cm",description:"튤립요정이 두고간 꽃더미들.",vimeo:"VIMEO_LINK_10",image:"assets/works/work-10-2.jpg",x:42.38,y:48.63,w:7.13,h:17.42},
   {id:11,title:"The Woman who ran",year:"2018",medium:"Ink on Paper",dimensions:"30x40cm",description:"어디론가 도망치는 여자.",vimeo:"VIMEO_LINK_11",image:"assets/works/work-11-2.jpg",x:51.12,y:48.72,w:10.79,h:16.71},
   {id:12,title:"겹의 상태I",year:"2026",medium:"Oil pastel on board paper",dimensions:"작품 크기 입력",description:"꽃을 이루는 여러 겹의 층위를 인간의 기억에 은유한 작업으로, 기억이 축적되고 중첩되며 변화하는 과정을 화면 위에 드러내고자 했다.",vimeo:"VIMEO_LINK_12",image:"assets/works/work-12-2.jpg",x:62.84,y:43.77,w:12.99,h:20.07},
-  {id:13,title:"와글 와글 II",year:"2026",medium:"Oil pastel on canvas",dimensions:"40.9x31.8cm",description:"다양한 모습을 가진 사람들이 와글와글 모여있는 모습을 꽃으로 형상화하여 표현했다.",vimeo:"VIMEO_LINK_13",image:"assets/works/work-13-2.jpg",x:76.76,y:43.94,w:7.62,h:17.15}
+  {id:13,title:"와글 와글 II",year:"2026",medium:"Oil pastel on canvas",dimensions:"40.9x31.8cm",description:"다양한 모습을 가진 사람들이 와글와글 모여있는 모습을 꽃으로 형상화하여 표현했다.",vimeo:"https://vimeo.com/1215174609",image:"assets/works/work-13-2.jpg",x:76.76,y:43.94,w:7.62,h:17.15}
 ];
 
 const $ = (id) => document.getElementById(id);
