@@ -6,11 +6,11 @@ const works = [
   {id:5,title:"그녀들의 계절",year:"2026",medium:"Oil on Canvas",dimensions:"45.5x91cm",description:"당신의 찬란한 시간들.",vimeo:"https://vimeo.com/1215182360",image:"assets/works/work-05-2.jpg",x:62.16,y:23.70,w:17.33,h:18.57},
   {id:6,title:"Iris shadow",year:"2018",medium:"Ink on Paper",dimensions:"40x30cm",description:"어느 날, 늘 가던 산책길에서 나무가 조용히 눈을 감고 낮잠을 자고 있었다.",vimeo:"VIMEO_LINK_06",image:"assets/works/work-06-2.jpg",x:80.66,y:23.78,w:9.28,h:20.16},
   {id:7,title:"비올레타의 방",year:"2025",medium:"Oil on Linen canvas",dimensions:"65.1x53cm",description:"클라우디아에게 꽃을 선물받은 비올레타는 방에다가 소중하게 꽂아두었다.",vimeo:"https://vimeo.com/1215080900",image:"assets/works/work-07-2.jpg",x:7.08,y:49.34,w:10.35,h:23.70},
-  {id:8,title:"클라우디아 거실",year:"2025",medium:"Oil on Linen canvas",dimensions:"65.1x53cm",description:"클라우디아의 어느 오후 햇살이 비치는 탁자.",vimeo:"VIMEO_LINK_08",image:"assets/works/work-08-2.jpg",x:19.29,y:48.98,w:10.69,h:24.14},
-  {id:9,title:"이파리 Ipari",year:"2021",medium:"Gouache on paper",dimensions:"36x26cm",description:"작은 이파리들이 봄을 불렀다.",vimeo:"VIMEO_LINK_09",image:"assets/works/work-09-2.jpg",x:32.32,y:48.54,w:7.96,h:18.21},
+  {id:8,title:"클라우디아 거실",year:"2025",medium:"Oil on Linen canvas",dimensions:"65.1x53cm",description:"클라우디아의 어느 오후 햇살이 비치는 탁자.",vimeo:"https://vimeo.com/1215381613",image:"assets/works/work-08-2.jpg",x:19.29,y:48.98,w:10.69,h:24.14},
+  {id:9,title:"이파리 Ipari",year:"2021",medium:"Gouache on paper",dimensions:"36x26cm",description:"작은 이파리들이 봄을 불렀다.",vimeo:"https://vimeo.com/1215381611",image:"assets/works/work-09-2.jpg",x:32.32,y:48.54,w:7.96,h:18.21},
   {id:10,title:"꽃더미",year:"2023",medium:"Ink on paper",dimensions:"29.7x21cm",description:"튤립요정이 두고간 꽃더미들.",vimeo:"VIMEO_LINK_10",image:"assets/works/work-10-2.jpg",x:42.38,y:48.63,w:7.13,h:17.42},
-  {id:11,title:"The Woman who ran",year:"2018",medium:"Ink on Paper",dimensions:"30x40cm",description:"어디론가 도망치는 여자.",vimeo:"VIMEO_LINK_11",image:"assets/works/work-11-2.jpg",x:51.12,y:48.72,w:10.79,h:16.71},
-  {id:12,title:"겹의 상태I",year:"2026",medium:"Oil pastel on board paper",dimensions:"작품 크기 입력",description:"꽃을 이루는 여러 겹의 층위를 인간의 기억에 은유한 작업으로, 기억이 축적되고 중첩되며 변화하는 과정을 화면 위에 드러내고자 했다.",vimeo:"VIMEO_LINK_12",image:"assets/works/work-12-2.jpg",x:62.84,y:43.77,w:12.99,h:20.07},
+  {id:11,title:"The Woman who ran",year:"2018",medium:"Ink on Paper",dimensions:"30x40cm",description:"어디론가 도망치는 여자.",vimeo:"https://vimeo.com/1215381614",image:"assets/works/work-11-2.jpg",x:51.12,y:48.72,w:10.79,h:16.71},
+  {id:12,title:"겹의 상태I",year:"2026",medium:"Oil pastel on board paper",dimensions:"작품 크기 입력",description:"꽃을 이루는 여러 겹의 층위를 인간의 기억에 은유한 작업으로, 기억이 축적되고 중첩되며 변화하는 과정을 화면 위에 드러내고자 했다.",vimeo:"https://vimeo.com/1215381612",image:"assets/works/work-12-2.jpg",x:62.84,y:43.77,w:12.99,h:20.07},
   {id:13,title:"와글 와글 II",year:"2026",medium:"Oil pastel on canvas",dimensions:"40.9x31.8cm",description:"다양한 모습을 가진 사람들이 와글와글 모여있는 모습을 꽃으로 형상화하여 표현했다.",vimeo:"https://vimeo.com/1215174609",image:"assets/works/work-13-2.jpg",x:76.76,y:43.94,w:7.62,h:17.15}
 ];
 
